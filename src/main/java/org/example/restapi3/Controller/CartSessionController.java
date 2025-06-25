@@ -48,7 +48,7 @@ public class CartSessionController {
         productId.add(service.get(id).getId());
 
         session.setAttribute("cart",productId);
-        return ResponseEntity.ok("User add to this cart");
+        return ResponseEntity.ok("Product add to this cart");
     }
     @DeleteMapping("/{id}")
     public ResponseEntity<String> removeFromCart (@PathVariable long id){
@@ -58,7 +58,7 @@ public class CartSessionController {
         }
         productId.remove(service.get(id).getId());
         session.setAttribute("cart",productId);
-        return ResponseEntity.ok("User remove from this cart");
+        return ResponseEntity.ok("Product remove from this cart");
     }
     @GetMapping("/total")
     public ResponseEntity<String> getTotal(){
